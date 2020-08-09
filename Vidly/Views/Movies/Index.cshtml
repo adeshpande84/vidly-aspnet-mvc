@@ -15,7 +15,7 @@
     <tbody>
         @foreach (Movie movie in Model.Movies)
         {
-            <tr><td>@movie.Name</td></tr>
+            <tr><td><a href="/Movies/Details/@movie.Id">@movie.Name</a></td></tr>
         }
 
     </tbody>

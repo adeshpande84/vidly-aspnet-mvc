@@ -18,8 +18,8 @@ namespace Vidly.Controllers
 
             var customers = new List<Customer>
             {
-                new Customer {Name = "Customer 1"},
-                new Customer {Name = "Customer 2"}
+                new Customer {Id = 1, Name = "Customer 1"},
+                new Customer {Id = 2, Name = "Customer 2"}
             };
 
             var viewModel = new RandomMovieViewModel
@@ -48,8 +48,8 @@ namespace Vidly.Controllers
         {
             List<Movie> movies = new List<Movie>
                 {
-                    new Movie { Name = "Shrek" },
-                    new Movie { Name = "Wall-E" }
+                    new Movie { Id = 1, Name = "Shrek" },
+                    new Movie { Id = 2, Name = "Wall-E" }
                 };
 
             var viewModel = new MoviesViewModel
@@ -58,6 +58,29 @@ namespace Vidly.Controllers
             };
 
             return View(viewModel);
+        }
+
+        public ActionResult Details(int id)
+        {
+            List<Movie> movies = new List<Movie>
+            {
+                new Movie { Id = 1, Name = "Shrek" },
+                new Movie { Id = 2, Name = "Wall-E" }
+
+            };
+
+            //Alternate predicate using lambda delegate
+
+            /*
+             * Movie matchedMovie = movies.Find(movie => movie.Id == id);
+             *
+             */
+
+            Predicate<Movie> findMovie = delegate (Movie m) { return m.Id == id; };
+
+            Movie matchedMovie = movies.Find(findMovie);
+
+            return View(matchedMovie);
         }
 
     }
