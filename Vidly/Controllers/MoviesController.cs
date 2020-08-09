@@ -11,6 +11,18 @@ namespace Vidly.Controllers
     [RoutePrefix("movies")]
     public class MoviesController : Controller
     {
+
+        private IEnumerable<Movie> getMovies()
+        {
+            IEnumerable<Movie> movies = new List<Movie>
+            {
+                new Movie { Id = 1, Name = "Shrek" },
+                new Movie { Id = 2, Name = "Wall-E" }
+            };
+
+            return movies;
+        }
+
         // GET: Movies/Random
         public ActionResult Random()
         {
@@ -46,11 +58,7 @@ namespace Vidly.Controllers
 
         public ActionResult Index()
         {
-            List<Movie> movies = new List<Movie>
-                {
-                    new Movie { Id = 1, Name = "Shrek" },
-                    new Movie { Id = 2, Name = "Wall-E" }
-                };
+            IEnumerable<Movie> movies = getMovies();
 
             var viewModel = new MoviesViewModel
             {
@@ -62,23 +70,19 @@ namespace Vidly.Controllers
 
         public ActionResult Details(int id)
         {
-            List<Movie> movies = new List<Movie>
-            {
-                new Movie { Id = 1, Name = "Shrek" },
-                new Movie { Id = 2, Name = "Wall-E" }
-
-            };
+            IEnumerable<Movie> movies = getMovies();
 
             //Alternate predicate using lambda delegate
 
             /*
-             * Movie matchedMovie = movies.Find(movie => movie.Id == id);
+             * Movie matchedMovie = movies.SingleOrDefault(movie => movie.Id == id);
              *
              */
 
             Predicate<Movie> findMovie = delegate (Movie m) { return m.Id == id; };
-
-            Movie matchedMovie = movies.Find(findMovie);
+            
+            Movie matchedMovie = movies.ToList().Find(findMovie); //.SingleOrDefault(findMovie);
+            //Movie matchedMovie = movies.Find(findMovie);
 
             return View(matchedMovie);
         }

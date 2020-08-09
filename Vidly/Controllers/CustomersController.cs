@@ -10,15 +10,24 @@ namespace Vidly.Controllers
 {
     public class CustomersController : Controller
     {
-        // GET: Customers
-        public ActionResult Index()
+
+        private IEnumerable<Customer> getCustomers()
         {
-            List<Customer> customers = new List<Customer>
+            IEnumerable<Customer> customers = new List<Customer>
             {
                 new Customer { Id = 1, Name = "Customer 1" },
                 new Customer { Id = 2, Name = "Customer 2" }
 
             };
+
+            return customers;
+        }
+
+        // GET: Customers
+        public ActionResult Index()
+        {
+
+            IEnumerable<Customer> customers = getCustomers();
 
             CustomersViewModel customersViewModel = new CustomersViewModel { Customers = customers };
 
@@ -27,23 +36,18 @@ namespace Vidly.Controllers
 
         public ActionResult Details(int id)
         {
-            List<Customer> customers = new List<Customer>
-            {
-                new Customer { Id = 1, Name = "Customer 1" },
-                new Customer { Id = 2, Name = "Customer 2" }
-
-            };
+            IEnumerable<Customer> customers = getCustomers();
 
             //Alternate predicate using lambda delegate
 
             /*
-             * Customer matchedCustomer = customers.Find(customer => customer.Id == id);
+             * Customer matchedCustomer = customers.SingleOrDefault(customer => customer.Id == id);
              *
              */
 
             Predicate<Customer> findCustomer = delegate (Customer c) { return c.Id == id; };
             
-            Customer matchedCustomer = customers.Find(findCustomer);
+            Customer matchedCustomer = customers.ToList().Find(findCustomer);
             
             return View(matchedCustomer);
         }
