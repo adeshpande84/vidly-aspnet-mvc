@@ -181,11 +181,28 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008092136087_InitialModel.cs" />
+    <Compile Include="Migrations\202008092136087_InitialModel.Designer.cs">
+      <DependentUpon>202008092136087_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008120106321_AddIsSubscribedToNewsletterToCustomer.cs" />
+    <Compile Include="Migrations\202008120106321_AddIsSubscribedToNewsletterToCustomer.Designer.cs">
+      <DependentUpon>202008120106321_AddIsSubscribedToNewsletterToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008120111067_AddMembershipType.cs" />
+    <Compile Include="Migrations\202008120111067_AddMembershipType.Designer.cs">
+      <DependentUpon>202008120111067_AddMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008120117073_ChangeMemberShipTypePrimaryKeyType.cs" />
+    <Compile Include="Migrations\202008120117073_ChangeMemberShipTypePrimaryKeyType.Designer.cs">
+      <DependentUpon>202008120117073_ChangeMemberShipTypePrimaryKeyType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -273,6 +290,20 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202008092136087_InitialModel.resx">
+      <DependentUpon>202008092136087_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008120106321_AddIsSubscribedToNewsletterToCustomer.resx">
+      <DependentUpon>202008120106321_AddIsSubscribedToNewsletterToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008120111067_AddMembershipType.resx">
+      <DependentUpon>202008120111067_AddMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008120117073_ChangeMemberShipTypePrimaryKeyType.resx">
+      <DependentUpon>202008120117073_ChangeMemberShipTypePrimaryKeyType.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
