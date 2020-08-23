@@ -26,7 +26,7 @@ namespace Vidly.Controllers
 
         private IEnumerable<Customer> getCustomers()
         {
-            IEnumerable<Customer> customers = _context.Customer.Include(c => c.MembershipType);
+            IEnumerable<Customer> customers = _context.Customers.Include(c => c.MembershipType);
 
             return customers;
         }
@@ -58,6 +58,17 @@ namespace Vidly.Controllers
             Customer matchedCustomer = customers.ToList().Find(findCustomer);
             
             return View(matchedCustomer);
+        }
+
+        public ActionResult New()
+        {
+            IEnumerable<MembershipType> membershipTypes = _context.MembershipTypes.ToList();
+            var viewModel = new NewCustomerViewModel
+            {
+                MembershipTypes = membershipTypes
+            };
+
+            return View(viewModel);
         }
 
     }
