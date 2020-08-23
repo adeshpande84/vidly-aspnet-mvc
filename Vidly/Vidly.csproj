@@ -197,9 +197,46 @@
     <Compile Include="Migrations\202008120117073_ChangeMemberShipTypePrimaryKeyType.Designer.cs">
       <DependentUpon>202008120117073_ChangeMemberShipTypePrimaryKeyType.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202008152023399_PopulateMembershipTypes.cs" />
+    <Compile Include="Migrations\202008152023399_PopulateMembershipTypes.Designer.cs">
+      <DependentUpon>202008152023399_PopulateMembershipTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008222102300_ApplyAnnotationsToCustomerName.cs" />
+    <Compile Include="Migrations\202008222102300_ApplyAnnotationsToCustomerName.Designer.cs">
+      <DependentUpon>202008222102300_ApplyAnnotationsToCustomerName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008222327061_AddNameColumnToMembershipType.cs" />
+    <Compile Include="Migrations\202008222327061_AddNameColumnToMembershipType.Designer.cs">
+      <DependentUpon>202008222327061_AddNameColumnToMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008222346269_PopulateNameInMembershipTypeTable.cs" />
+    <Compile Include="Migrations\202008222346269_PopulateNameInMembershipTypeTable.Designer.cs">
+      <DependentUpon>202008222346269_PopulateNameInMembershipTypeTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008222356482_AddBirthDateToCustomer.cs" />
+    <Compile Include="Migrations\202008222356482_AddBirthDateToCustomer.Designer.cs">
+      <DependentUpon>202008222356482_AddBirthDateToCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008230012399_ChangeBirthDateToNullableInCustomer.cs" />
+    <Compile Include="Migrations\202008230012399_ChangeBirthDateToNullableInCustomer.Designer.cs">
+      <DependentUpon>202008230012399_ChangeBirthDateToNullableInCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008230019405_AddDataTypeDateAnnotationToBirthDateInCustomer.cs" />
+    <Compile Include="Migrations\202008230019405_AddDataTypeDateAnnotationToBirthDateInCustomer.Designer.cs">
+      <DependentUpon>202008230019405_AddDataTypeDateAnnotationToBirthDateInCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008230035090_AddMovieModel.cs" />
+    <Compile Include="Migrations\202008230035090_AddMovieModel.Designer.cs">
+      <DependentUpon>202008230035090_AddMovieModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008230042368_PopulateGenres.cs" />
+    <Compile Include="Migrations\202008230042368_PopulateGenres.Designer.cs">
+      <DependentUpon>202008230042368_PopulateGenres.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
@@ -303,6 +340,33 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008120117073_ChangeMemberShipTypePrimaryKeyType.resx">
       <DependentUpon>202008120117073_ChangeMemberShipTypePrimaryKeyType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008152023399_PopulateMembershipTypes.resx">
+      <DependentUpon>202008152023399_PopulateMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008222102300_ApplyAnnotationsToCustomerName.resx">
+      <DependentUpon>202008222102300_ApplyAnnotationsToCustomerName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008222327061_AddNameColumnToMembershipType.resx">
+      <DependentUpon>202008222327061_AddNameColumnToMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008222346269_PopulateNameInMembershipTypeTable.resx">
+      <DependentUpon>202008222346269_PopulateNameInMembershipTypeTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008222356482_AddBirthDateToCustomer.resx">
+      <DependentUpon>202008222356482_AddBirthDateToCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008230012399_ChangeBirthDateToNullableInCustomer.resx">
+      <DependentUpon>202008230012399_ChangeBirthDateToNullableInCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008230019405_AddDataTypeDateAnnotationToBirthDateInCustomer.resx">
+      <DependentUpon>202008230019405_AddDataTypeDateAnnotationToBirthDateInCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008230035090_AddMovieModel.resx">
+      <DependentUpon>202008230035090_AddMovieModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008230042368_PopulateGenres.resx">
+      <DependentUpon>202008230042368_PopulateGenres.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

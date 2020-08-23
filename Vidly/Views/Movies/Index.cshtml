@@ -10,12 +10,18 @@
 
 <table class="table table-bordered table-hover">
     <thead>
-        <tr><td>Movie</td></tr>
+        <tr>
+            <td>Movie</td>
+            <td>Genre</td>
+        </tr>
     </thead>
     <tbody>
         @foreach (Movie movie in Model.Movies)
         {
-            <tr><td><a href="/Movies/Details/@movie.Id">@movie.Name</a></td></tr>
+            <tr>
+                <td><a href="/Movies/Details/@movie.Id">@movie.Name</a></td>
+                <td>@movie.Genre.Name</td>
+            </tr>
         }
 
     </tbody>

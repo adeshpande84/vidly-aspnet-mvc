@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity;
 using System.Web;
 using System.Web.Mvc;
 using Vidly.Models;
@@ -11,14 +12,21 @@ namespace Vidly.Controllers
     [RoutePrefix("movies")]
     public class MoviesController : Controller
     {
+        private ApplicationDbContext _context;
+
+        public MoviesController()
+        {
+            _context = new ApplicationDbContext();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
 
         private IEnumerable<Movie> getMovies()
         {
-            IEnumerable<Movie> movies = new List<Movie>
-            {
-                new Movie { Id = 1, Name = "Shrek" },
-                new Movie { Id = 2, Name = "Wall-E" }
-            };
+            IEnumerable<Movie> movies = _context.Movie.Include(m => m.Genre);
 
             return movies;
         }

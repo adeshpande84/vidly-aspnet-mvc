@@ -11,13 +11,17 @@
 
 <table class="table table-bordered table-hover">
     <thead>
-    <tr><td>Customer</td></tr>
+    <tr>
+        <td>Customer</td>
+        <td>Membership Type</td>
+    </tr>
     </thead>
     <tbody>
     @foreach (Customer customer in Model.Customers)
     {
         <tr>
             <td><a href="/Customers/Details/@customer.Id">@customer.Name</a></td>
+            <td>@customer.MembershipType.Name</td>
         </tr>
     }
     
